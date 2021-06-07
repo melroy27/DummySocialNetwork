@@ -20,12 +20,14 @@ export class CreatePostComponent implements OnInit {
     private router: Router, public fb: FormBuilder) { }
 
   ngOnInit() {
-
     this.userData = this.dataSrv.getUserData();
     this.userInfo = this.dataSrv.getUserInfo();
     this.userInfo = JSON.parse(this.userInfo)
   }
 
+  /**
+   * Method to create a new post
+   */
   createPost() {
     let title = this.postForm.controls.title.value
     let content = this.postForm.controls.content.value

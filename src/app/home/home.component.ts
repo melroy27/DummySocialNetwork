@@ -30,6 +30,9 @@ export class HomeComponent implements OnInit {
     this.getUserPosts();
     this.getUsrToFollow();
   }
+  /**
+   * method to retrive a users posts
+   */
   getUserPosts() {
     this.usrService.getUsersPost(this.userInfo?._id).subscribe((res: any) => {
       this.posts = res.posts
@@ -37,6 +40,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  /**
+   * Methods to display users to follow
+   */
   getUsrToFollow() {
     this.usrService.getUsersToFollow(this.userInfo?._id).subscribe((res: any) => {
       console.log('Users other than the current user ->', res.users);
@@ -44,6 +50,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  /**
+   * method to follow a user
+   * @param id
+   * @param name
+   */
   followUser(id: any, name: string) {
     console.log(id);
     this.usrService.followUser(this.userInfo._id, id, name).subscribe(res => {
@@ -51,14 +62,23 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  /**
+   * method to open a new page
+   */
   createPost() {
     this.router.navigateByUrl('/createPost')
   }
 
+  /**
+     * method to open a new page
+     */
   followingList() {
     this.router.navigateByUrl('/listFollowing')
   }
 
+  /**
+   * method to sign out
+   */
   signOut() {
     this.dataSrv.deleteToken();
     this.dataSrv.deleteUserData();

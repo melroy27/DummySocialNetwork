@@ -18,16 +18,21 @@ export class ListFollowingComponent implements OnInit {
   ngOnInit() {
     this.userInfo = this.dataSrv.getUserInfo();
     this.userInfo = JSON.parse(this.userInfo)
-
     this.usrService.followingList(this.userInfo._id).subscribe((res: any) => {
       this.userList = res.list
     })
   }
 
+  /**
+     * method to open a new page
+     */
   home() {
     this.router.navigateByUrl('/home')
   }
 
+  /**
+     * method to open a new page
+     */
   createPost() {
     this.router.navigateByUrl('/createPost')
   }

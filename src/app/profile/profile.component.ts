@@ -19,6 +19,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.userData = this.dataSrv.getUserData();
   }
+
+  /**
+   * method to create a new user's info
+   */
   saveUser() {
     this.usrService.createUser(this.userData.name, this.userData.photoUrl, this.userData.provider, this.userData.email, this.about.value).subscribe((res: any) => {
       if (res['status'] === true) {

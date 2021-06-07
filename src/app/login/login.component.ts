@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  /**
+   * using the package to login a user with google
+   */
   signInWithGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       res => {
