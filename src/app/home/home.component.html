@@ -1,1 +1,47 @@
-<p>home works!</p>
+<div class="vertical">
+  <button mat-raised-button color="primary" (click)="createPost()">Create a new Post</button>
+  <button mat-raised-button color="primary" (click)="followingList()">Following List</button>
+  <button mat-raised-button color="primary" (click)="signOut()">Signout</button>
+</div>
+
+<div *ngIf="posts.length==0">
+  <p>You havent made any posts...</p>
+</div>
+<br>
+<div *ngIf="posts.length>=1">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let post of posts">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{post?.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{post?.askedOn|date}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      {{post.content}}
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<br>
+<div style="margin: 10px;">
+  <p><b>Follow Some People...</b></p>
+  <div class="followers">
+    <mat-action-list>
+      <mat-card class="card" *ngFor="let users of usersToFollow">
+        <mat-card-header>
+          <img mat-card-avatar src={{users.photoUrl}}>
+          <mat-card-title>
+            {{users.name}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button mat-raised-button color="primary"
+            (click)="followUser(users._id,users.name)">Follow</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-action-list>
+  </div>
+
+</div>

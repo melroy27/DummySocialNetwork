@@ -6,14 +6,15 @@ import { ListFollowingComponent } from './list-following/list-following.componen
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'listFollowing', component: ListFollowingComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'createPost', component: CreatePostComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'listFollowing', component: ListFollowingComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'createPost', component: CreatePostComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

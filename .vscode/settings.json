@@ -1,0 +1,16 @@
+{
+    "editor.fontFamily": "MonoLisa",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 0,
+    "editor.suggestFontSize": 15,
+    "editor.suggestLineHeight": 28,
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.letterSpacing": 0.4,
+    "editor.fontLigatures": true,
+    "editor.smoothScrolling": true,
+    "editor.suggestSelection": "first",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.lineHeight": 1.5,
+    "editor.cursorWidth": 2
+}

@@ -1,1 +1,10 @@
-<p>list-following works!</p>
+<div class="vertical">
+  <button mat-raised-button color="primary" (click)="createPost()">Create a new Post</button>
+  <button mat-raised-button color="primary" (click)="home()">Home</button>
+</div>
+<div style="margin: 10px;">
+  <p> <b>List of people I follow:</b> </p>
+  <ul *ngFor="let name of userList ">
+    <li>{{name.userName}}</li>
+  </ul>
+</div>

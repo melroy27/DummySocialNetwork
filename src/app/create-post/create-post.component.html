@@ -1,1 +1,15 @@
-<p>create-post works!</p>
+<div>
+  <form [formGroup]="postForm" (ngSubmit)="createPost()">
+    <p>
+      <label>Title </label>
+      <input type="text" formControlName="title">
+    </p>
+    <p>
+      <label>Content </label>
+      <input type="text" formControlName="content">
+    </p>
+    <p>
+      <button type="submit">Create Post</button>
+    </p>
+  </form>
+</div>

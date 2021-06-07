@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-list-following',
@@ -6,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-following.component.scss']
 })
 export class ListFollowingComponent implements OnInit {
+  userList = []
+  userInfo: any;
+  constructor(public usrService: UserService,
+    public dataSrv: DataService,
+    private router: Router) { }
 
-  constructor() { }
+  ngOnInit() {
+    this.userInfo = this.dataSrv.getUserInfo();
+    this.userInfo = JSON.parse(this.userInfo)
 
-  ngOnInit(): void {
+    this.usrService.followingList(this.userInfo._id).subscribe((res: any) => {
+      this.userList = res.list
+    })
   }
 
+  home() {
+    this.router.navigateByUrl('/home')
+  }
+
+  createPost() {
+    this.router.navigateByUrl('/createPost')
+  }
 }
