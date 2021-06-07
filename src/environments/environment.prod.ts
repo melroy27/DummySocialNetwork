@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  appBaseUrl: 'https://dummy-social-network.herokuapp.com/api'
 };
