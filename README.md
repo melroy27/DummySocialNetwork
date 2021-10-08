@@ -4,6 +4,9 @@ This is a Dummy Simple Social Network where people can login using Google(SignIn
 
 The Backend Code can be found here -> https://github.com/melroy27/SocialNetworkDummyBackend
 
+Apparently the one hosted doesnt work currently...sorry for the inconvenience 
+ 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
 ## Development server
