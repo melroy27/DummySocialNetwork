@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appBaseUrl: 'https://dummy-social-network.herokuapp.com/api'
+  appBaseUrl: 'http://localhost:3000/api'
 };
 
 /*
